@@ -1,8 +1,10 @@
 * {
+  /* border-box 宽度=内容+内边距+边框 context-box 宽度=内容 */
   box-sizing: border-box;
 }
 
 body {
+  /* 无衬线字体，保证可以正常显示 */
   font-family: sans-serif;
   margin: 5rem;
 }

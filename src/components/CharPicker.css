@@ -1,6 +1,7 @@
 select {
+    /* 继承父元素 */
     font: inherit;
-
+    /* 兼容不同浏览器 */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

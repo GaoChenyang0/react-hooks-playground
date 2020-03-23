@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Summary.css';
-
+// ui组件，展示角色属性
 const Summary = props => {
     return (
         <div className="summary">

@@ -6,27 +6,7 @@ const Character = props => {
   // loadedCharacter存放角色数据
   const [loadedCharacter, setLoadedCharacter] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  // // 当角色id、加载状态改变时，更新组件
-  // shouldComponentUpdate(nextProps, nextState) {
-  //     console.log('shouldComponentUpdate');
-  //     return (
-  //         nextProps.selectedChar !== props.selectedChar ||
-  //         nextState.loadedCharacter.id !== loadedCharacter.id ||
-  //         nextState.isLoading !== isLoading
-  //     );
-  // }
-  // // 当上一个角色id与现在的id不同时，请求数据
-  // componentDidUpdate(prevProps) {
-  //     console.log('Component did update');
-  //     if (prevProps.selectedChar !== props.selectedChar) {
-  //         this.fetchData();
-  //     }
-  // }
-  // 初次加载，请求数据
-  // 未设置第二个参数时，每当组件中的props和state发生改变时，组件会重新render
-  useEffect(() => {
-    fetchData();
-  }, []);
+
   // 根据id查找角色数据
   const fetchData = () => {
     console.log(
@@ -58,6 +38,27 @@ const Character = props => {
         setIsLoading(false);
       });
   };
+  // // 当角色id、加载状态改变时，更新组件
+  // shouldComponentUpdate(nextProps, nextState) {
+  //     console.log('shouldComponentUpdate');
+  //     return (
+  //         nextProps.selectedChar !== props.selectedChar ||
+  //         nextState.loadedCharacter.id !== loadedCharacter.id ||
+  //         nextState.isLoading !== isLoading
+  //     );
+  // }
+  // 使用useEffect替换componentDidUpdate方法
+  useEffect(() => {
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.selectedChar]);
+  // 初次加载，请求数据
+  // 未设置第二个参数时，每当组件中的props和state发生改变时，组件会重新render
+  useEffect(() => {
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // // 组件即将卸载
   // componentWillUnmount() {
   //     console.log('Too soon...');

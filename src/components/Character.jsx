@@ -50,7 +50,7 @@ const Character = props => {
   // 使用useEffect替换componentDidUpdate方法
   useEffect(() => {
     fetchData();
-    return console.log('COMPONENT WILL UNMOUNT...');
+    return () => console.log('COMPONENT WILL UNMOUNT...');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.selectedChar]);
 

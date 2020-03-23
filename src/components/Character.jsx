@@ -77,4 +77,5 @@ const Character = props => {
   return content;
 };
 
-export default Character;
+// 使用React.memo包裹组件，达到与PureComponent相似的效果（PureComponent无法在functional component中使用）
+export default React.memo(Character);

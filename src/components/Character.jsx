@@ -52,12 +52,6 @@ const Character = props => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.selectedChar]);
-  // 初次加载，请求数据
-  // 未设置第二个参数时，每当组件中的props和state发生改变时，组件会重新render
-  useEffect(() => {
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   // // 组件即将卸载
   // componentWillUnmount() {

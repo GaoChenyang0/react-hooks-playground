@@ -25,7 +25,7 @@ const Character = props => {
   // 初次加载，请求数据
   // 未设置第二个参数时，每当组件中的props和state发生改变时，组件会重新render
   useEffect(() => {
-    // fetchData();
+    fetchData();
   }, []);
   // 根据id查找角色数据
   const fetchData = () => {
